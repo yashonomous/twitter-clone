@@ -4,13 +4,27 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
+import { Buffer } from "buffer";
+import StateProvider from "./commons/StateProvider";
+import { initialState } from "./commons/initialState";
+import reducer from "./commons/reducer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+window.Buffer = window.Buffer || Buffer;
+if (!("process" in window)) {
+  window.process = {
+    nextTick: () => null,
+  };
+}
+
 root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <Router>
+        <App />
+      </Router>
+    </StateProvider>
   </React.StrictMode>
 );
 

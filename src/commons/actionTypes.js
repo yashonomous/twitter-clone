@@ -1,0 +1,3 @@
+export const actionTypes = {
+  SET_REDIRECT_RESPONSE_HEADERS: "SET_REDIRECT_RESPONSE_HEADERS",
+};
