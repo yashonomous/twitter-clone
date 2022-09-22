@@ -1,5 +1,6 @@
 const BASE_URL = "https://api.twitter.com/";
-export const REDIRECT_URI_LOCAL = "https://twitter-clone-8ffe1.firebaseapp.com/";
+export const REDIRECT_URI = "https://twitter-clone-8ffe1.firebaseapp.com/";
+export const REDIRECT_URI_LOCAL = "http://localhost:3000/";
 
 export const TWITTER_APP_KEYS = {
   CONSUMER_KEY: "v6c1jP29w6oHkse2TWHn5C3ww",

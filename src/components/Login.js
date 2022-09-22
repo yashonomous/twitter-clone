@@ -7,6 +7,7 @@ import { useStateValue } from "../commons/StateProvider";
 import {
   getAccessToken,
   getAuthUrl,
+  getOAuthTokenAndSecret,
   getResponseHeaders,
 } from "../commons/twitter";
 import {
@@ -35,9 +36,10 @@ function Login() {
       //   redirectResponseHeaders: getResponseHeaders(),
       // });
 
-      console.log(getAuthUrl());
+      // console.log(getAuthUrl());
 
-      setRedirectUrl(getAuthUrl());
+      // setRedirectUrl(getAuthUrl());
+      getOAuthTokenAndSecret();
 
       // sessionStorage.setItem("codeVerifier", codeVerifier);
       // sessionStorage.setItem("state", state);
@@ -51,7 +53,7 @@ function Login() {
         return;
       } else {
         // debugger;
-        getAccessToken(code, state);
+        // getAccessToken(code, state);
       }
     }
   }, []);
